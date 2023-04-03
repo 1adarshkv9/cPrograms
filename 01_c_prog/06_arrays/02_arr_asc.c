@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title:
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,30 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int main() {
+    int size, i, j, temp;
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+    int arr[size];
+    printf("Enter %d elements in the array: ", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < size-1; i++) {
+        for (j = i+1; j < size; j++) {
+            if (arr[i] > arr[j]) { 
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    printf("Elements of array in ascending order: ");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
 }
+
 
 // Program End
