@@ -8,20 +8,28 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author:
+ * Title:
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
 
 // Header File
 #include <stdio.h>
+#include <string.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int main() {
+    char input[10];
+    printf("Enter a string: ");
+    scanf("%s", input);
+    if (strcmp(input, "hi") == 0) 
+    { 
+        
+        printf("Hello\n");
+    } else {
+        printf("not enter hi\n");
+    }
+    return 0;
 }
 
 // Program End
