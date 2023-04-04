@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,19 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
+int main() {
+    
+    int *p;
+    printf("enter a value:");
+    scanf("%d",&p);
      
-     return 0;
+    
+    
+    printf("Value of p = %d\n",p);
+    printf("Value of p = %p\n",&p);
+    
+    
+    return 0;
 }
 
 // Program End
