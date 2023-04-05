@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,27 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int find_max(int *a, int *b) {
+    if (*a > *b) {
+        return *a;
+    } else {
+        return *b;
+    }
 }
+
+int main() {
+    int num1, num2, max;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    
+    max = find_max(&num1, &num2);
+
+    printf("Maximum number between %d and %d is %d\n", num1, num2, max);
+
+    return 0;
+}
+
 
 // Program End
