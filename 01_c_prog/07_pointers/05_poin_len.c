@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author:
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,29 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int string_length(char *str) {
+    int length = 0;
+
+    while (*str != '\0') {
+        length++;
+        str++;
+    }
+
+    return length;
 }
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    int length = string_length(str);
+
+    printf("Length of the string is %d\n", length);
+
+    return 0;
+}
+
 
 // Program End
