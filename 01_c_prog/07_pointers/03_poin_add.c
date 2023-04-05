@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,20 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+void add(int *a, int *b, int *result) {
+    *result = *a + *b;
 }
+
+int main() {
+    int num1 = 10, num2 = 20, sum;
+
+    
+    add(&num1, &num2, &sum);
+
+    printf("Sum of %d and %d is %d\n", num1, num2, sum);
+
+    return 0;
+}
+
 
 // Program End
