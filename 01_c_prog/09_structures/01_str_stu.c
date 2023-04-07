@@ -8,20 +8,41 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author:
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
 
 // Header File
 #include <stdio.h>
+#include <string.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+struct Student {
+    char name[50];
+    int rollno;
+    float marks;
+};
+
+int main() {
+    struct Student s;
+    
+    printf("Enter name: ");
+    scanf("%s", s.name);
+    
+    printf("Enter roll no.: ");
+    scanf("%d", &s.rollno);
+    
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+    
+    printf("\nStudent Information\n");
+    printf("Name: %s\n", s.name);
+    printf("Roll No.: %d\n", s.rollno);
+    printf("Marks: %.2f\n", s.marks);
+    
+    return 0;
 }
+
 
 // Program End
