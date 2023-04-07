@@ -8,20 +8,31 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author:
+ * Title:
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
 
 // Header File
 #include <stdio.h>
+#include <string.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int main() {
+    char str[] = "RUggEd bOaRD";
+    int len = strlen(str);
+    
+    for (int i = 0; i < len; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32;
+        } else if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;
+        }
+    }
+    
+    printf("Toggled case string: %s", str);
+    
+    return 0;
 }
 
 // Program End
