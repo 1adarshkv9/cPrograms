@@ -8,20 +8,29 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
 
 // Header File
 #include <stdio.h>
+#include <string.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int main() {
+    char pw[20];
+    printf("Enter password: ");
+    scanf("%s", pw);
+    
+    if (strcmp(pw, "danger") == 0) {
+        printf("Entered correct password");
+    } else {
+        printf("Wrong password");
+    }
+    
+    return 0;
 }
+
 
 // Program End
