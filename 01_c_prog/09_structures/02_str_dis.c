@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title:
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,34 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+struct Distance {
+    int feet;
+    int inches;
+};
+
+int main() {
+    struct Distance d1, d2, sum;
+    
+    printf("Enter first distance in feet and inches:\n");
+    printf("Feet: ");
+    scanf("%d", &d1.feet);
+    printf("Inches: ");
+    scanf("%d", &d1.inches);
+    
+    printf("Enter second distance in feet and inches:\n");
+    printf("Feet: ");
+    scanf("%d", &d2.feet);
+    printf("Inches: ");
+    scanf("%d", &d2.inches);
+    
+    sum.inches = d1.inches + d2.inches;
+    sum.feet = d1.feet + d2.feet + (sum.inches / 12);
+    sum.inches %= 12;
+    
+    printf("\nSum of distances: %d feet %d inches", sum.feet, sum.inches);
+    
+    return 0;
 }
+
 
 // Program End
