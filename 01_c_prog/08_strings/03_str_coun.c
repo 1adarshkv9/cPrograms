@@ -8,20 +8,38 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
 
 // Header File
 #include <stdio.h>
+#include <string.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int main() {
+    char str[] = "How are you";
+    int len = strlen(str);
+    int vowels = 0, consonants = 0, alphabets = 0;
+    
+    for (int i = 0; i < len; i++) {
+        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+            alphabets++;
+            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || 
+                str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+    
+    printf("Total vowels: %d\n", vowels);
+    printf("Total consonants: %d\n", consonants);
+    printf("Total alphabets: %d\n", alphabets);
+    
+    return 0;
 }
 
 // Program End
