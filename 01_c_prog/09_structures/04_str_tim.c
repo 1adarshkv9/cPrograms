@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,47 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+typedef struct {
+    int hours;
+    int minutes;
+    int seconds;
+} Time;
+
+Time difference(Time t1, Time t2);
+
+int main() {
+    Time startTime, endTime, diffTime;
+    
+    printf("Enter start time (hours, minutes, seconds): ");
+    scanf("%d %d %d", &startTime.hours, &startTime.minutes, &startTime.seconds);
+    
+    printf("Enter end time (hours, minutes, seconds): ");
+    scanf("%d %d %d", &endTime.hours, &endTime.minutes, &endTime.seconds);
+    
+    diffTime = difference(startTime, endTime);
+    
+    printf("Time difference: %d hours, %d minutes, %d seconds\n", diffTime.hours, diffTime.minutes, diffTime.seconds);
+    
+    return 0;
 }
+
+Time difference(Time t1, Time t2) {
+    Time diff;
+    int t1Seconds, t2Seconds, diffSeconds;
+    
+    t1Seconds = t1.hours * 3600 + t1.minutes * 60 + t1.seconds;
+    t2Seconds = t2.hours * 3600 + t2.minutes * 60 + t2.seconds;
+    
+    diffSeconds = t2Seconds - t1Seconds;
+    
+    diff.hours = diffSeconds / 3600;
+    diffSeconds %= 3600;
+    diff.minutes = diffSeconds / 60;
+    diffSeconds %= 60;
+    diff.seconds = diffSeconds;
+    
+    return diff;
+}
+
 
 // Program End
