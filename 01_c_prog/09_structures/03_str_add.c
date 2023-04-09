@@ -8,7 +8,7 @@
  *
  * Application: 
  * Brief: 
- * Author:
+ * Author: 
  * Title: 
  * Last Modified Date: 19.09.2022
  *
@@ -18,35 +18,45 @@
 #include <stdio.h>
 
 typedef struct {
-    float real;
-    float imag;
-} complex;
+    int hours;
+    int minutes;
+    int seconds;
+} Time;
 
-complex add(complex a, complex b);
+Time difference(Time t1, Time t2);
 
 int main() {
-    complex num1, num2, result;
+    Time startTime, endTime, diffTime;
     
-    printf("Enter real and imaginary parts of first complex number:\n");
-    scanf("%f %f", &num1.real, &num1.imag);
+    printf("Enter start time (hours, minutes, seconds): ");
+    scanf("%d %d %d", &startTime.hours, &startTime.minutes, &startTime.seconds);
     
-    printf("Enter real and imaginary parts of second complex number:\n");
-    scanf("%f %f", &num2.real, &num2.imag);
+    printf("Enter end time (hours, minutes, seconds): ");
+    scanf("%d %d %d", &endTime.hours, &endTime.minutes, &endTime.seconds);
     
-    result = add(num1, num2);
+    diffTime = difference(startTime, endTime);
     
-    printf("Sum = %.2f + %.2fi\n", result.real, result.imag);
+    printf("Time difference: %d hours, %d minutes, %d seconds\n", diffTime.hours, diffTime.minutes, diffTime.seconds);
     
     return 0;
 }
 
-complex add(complex a, complex b) {
-    complex result;
+Time difference(Time t1, Time t2) {
+    Time diff;
+    int t1Seconds, t2Seconds, diffSeconds;
     
-    result.real = a.real + b.real;
-    result.imag = a.imag + b.imag;
+    t1Seconds = t1.hours * 3600 + t1.minutes * 60 + t1.seconds;
+    t2Seconds = t2.hours * 3600 + t2.minutes * 60 + t2.seconds;
     
-    return result;
+    diffSeconds = t2Seconds - t1Seconds;
+    
+    diff.hours = diffSeconds / 3600;
+    diffSeconds %= 3600;
+    diff.minutes = diffSeconds / 60;
+    diffSeconds %= 60;
+    diff.seconds = diffSeconds;
+    
+    return diff;
 }
 
 
