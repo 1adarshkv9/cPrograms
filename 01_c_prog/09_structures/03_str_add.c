@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author:
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,37 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+typedef struct {
+    float real;
+    float imag;
+} complex;
+
+complex add(complex a, complex b);
+
+int main() {
+    complex num1, num2, result;
+    
+    printf("Enter real and imaginary parts of first complex number:\n");
+    scanf("%f %f", &num1.real, &num1.imag);
+    
+    printf("Enter real and imaginary parts of second complex number:\n");
+    scanf("%f %f", &num2.real, &num2.imag);
+    
+    result = add(num1, num2);
+    
+    printf("Sum = %.2f + %.2fi\n", result.real, result.imag);
+    
+    return 0;
 }
+
+complex add(complex a, complex b) {
+    complex result;
+    
+    result.real = a.real + b.real;
+    result.imag = a.imag + b.imag;
+    
+    return result;
+}
+
 
 // Program End
