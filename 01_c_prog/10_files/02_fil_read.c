@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,32 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int main() {
+    FILE *fptr;
+    char filename[100], c;
+
+    
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+
+    
+    fptr = fopen(filename, "r");
+    if (fptr == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    
+    printf("File contents:\n");
+    while ((c = fgetc(fptr)) != EOF) {
+        printf("%c", c);
+    }
+
+
+    fclose(fptr);
+
+    return 0;
 }
+
 
 // Program End
