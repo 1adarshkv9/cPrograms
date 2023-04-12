@@ -1,31 +1,53 @@
-/***********************************************************************************
-Problem Statement:
-Write a simple c program to count number of words and characters in a file.
+/*********************************************************************************************
+ * © 2022 RuggedBOARRD. - All Rights Reserved. Permission to use, modify, copy, and distribute
+ * this source code, object code, or executable code (collectively, Software), is granted only
+ * under the terms of a valid written license agreement with RuggedBOARD. Unauthorized copying
+ * or other use of the Software is strictly prohibited.  Software is owned by and constitutes
+ * the proprietary works, trade secrets, and copyrights of Embitel or its licensors.
+ * For further information, contact community.ruggedboard.com / info@ruggedboard.com
+ *
+ * Application: 
+ * Brief: 
+ * Author: 
+ * Title: 
+ * Last Modified Date: 19.09.2022
+ *
+/*********************************************************************************************/
 
-Src File: fil_coun.c 
-Out File: fil_coun
+// Header File
+#include <stdio.h>
 
-Compilation:
-- Compile the code in VSCode
-- Compile the code in commandline using gcc
-- Compile the code in commandline using Makefile
+int main() {
+    FILE *fp;
+    char filename[100];
+    char ch;
+    int charCount = 0, wordCount = 0;
 
-Example output:
--------------------------------
-rb-dev$./fil_coun
+    printf("Enter filename: ");
+    scanf("%s", filename);
 
-Count the number of words and characters in a file :
----------------------------------------------------------
- Input the filename to be opened : test.txt
- The content of the file test.txt are : 
-hello guys
-hows your course going on
+    fp = fopen(filename, "r");
 
- The number of words in the  file test.txt are : 7
- The number of characters in the  file test.txt are : 30
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 0;
+    }
+
+    while ((ch = fgetc(fp)) != EOF) {
+        charCount++;
+
+        if (ch == ' ' || ch == '\n' || ch == '\t') {
+            wordCount++;
+        }
+    }
+
+    fclose(fp);
+
+    printf("Number of characters: %d\n", charCount);
+    printf("Number of words: %d\n", wordCount + 1);
+
+    return 0;
+}
 
 
-rb-dev$
--------------------------------
-
-***********************************************************************************/
+// Program End
