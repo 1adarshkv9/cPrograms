@@ -8,8 +8,8 @@
  *
  * Application: 
  * Brief: 
- * Author: Natarajan S  ( natarajan.s@ruggedboard.com )
- * Title: Program Manager / Trainner
+ * Author: 
+ * Title: 
  * Last Modified Date: 19.09.2022
  *
 /*********************************************************************************************/
@@ -17,11 +17,37 @@
 // Header File
 #include <stdio.h>
 
-// Main Function
-int main()
-{
-     
-     return 0;
+int main() {
+    FILE *fp;
+    char filename[100];
+    char ch;
+    int charCount = 0, wordCount = 0;
+
+    printf("Enter filename: ");
+    scanf("%s", filename);
+
+    fp = fopen(filename, "r");
+
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 0;
+    }
+
+    while ((ch = fgetc(fp)) != EOF) {
+        charCount++;
+
+        if (ch == ' ' || ch == '\n' || ch == '\t') {
+            wordCount++;
+        }
+    }
+
+    fclose(fp);
+
+    printf("Number of characters: %d\n", charCount);
+    printf("Number of words: %d\n", wordCount + 1);
+
+    return 0;
 }
+
 
 // Program End
